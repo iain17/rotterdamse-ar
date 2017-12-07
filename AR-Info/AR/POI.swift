@@ -24,7 +24,7 @@ struct POI {
                        ["51.986946", "5.952091", "12.5", "pin", "HAN C-Vleugel\nRuitenberglaan 26\nArnhem\nThe Netherlands"]]
     }
 
-    func makePointsOfinterest(sceneLocationView: SceneLocationView, viewController: ViewController) {
+    func makePointsOfinterest(sceneLocationView: SceneLocationView, viewController: ARViewController) {
         var tempLocation: CLLocation? = nil
         for group in self.groups {
             let pinCoordinate = CLLocationCoordinate2D(latitude: Double(group[0])!, longitude: Double(group[1])!)
@@ -52,7 +52,7 @@ struct POI {
         return img
     }
     
-    private func overlayTextOverImage (image: UIImage, text: String, viewController: ViewController) -> UIImage? {
+    private func overlayTextOverImage (image: UIImage, text: String, viewController: ARViewController) -> UIImage? {
         let viewToRender = UIView(frame: CGRect(x: 0, y: 0, width: viewController.view.frame.size.width, height: viewController.view.frame.size.width))
         let imgView = UIImageView(frame: viewToRender.frame)
         imgView.image = image

@@ -8,16 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		1776A5EEB235C7C0402C062A /* Pods_AR_Info.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4DE888C580761C2F9FD242 /* Pods_AR_Info.framework */; };
+		275EBB371FD9938D000F41B2 /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB361FD9938D000F41B2 /* UITableViewController.swift */; };
+		275EBB391FD993B6000F41B2 /* AddContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB381FD993B6000F41B2 /* AddContainerViewController.swift */; };
+		275EBB3C1FD99497000F41B2 /* ar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB3A1FD99497000F41B2 /* ar.xcdatamodeld */; };
+		275EBB3F1FD99536000F41B2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB3E1FD99536000F41B2 /* CoreDataManager.swift */; };
+		275EBB421FD9965E000F41B2 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB411FD9965E000F41B2 /* Container.swift */; };
+		275EBB441FD99869000F41B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275EBB431FD99869000F41B2 /* Assets.xcassets */; };
+		275EBB461FD999EA000F41B2 /* ContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB451FD999EA000F41B2 /* ContainerTableViewCell.swift */; };
 		5F395CF886554EB05DCF13F5 /* Pods_AR_InfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F40A93F4D5FE72E31FEC10 /* Pods_AR_InfoTests.framework */; };
 		71368CB11F90C71C00738CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CB01F90C71C00738CE8 /* AppDelegate.swift */; };
-		71368CB31F90C71C00738CE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CB21F90C71C00738CE8 /* ViewController.swift */; };
+		71368CB31F90C71C00738CE8 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CB21F90C71C00738CE8 /* ARViewController.swift */; };
 		71368CB61F90C71C00738CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71368CB41F90C71C00738CE8 /* Main.storyboard */; };
-		71368CB81F90C71C00738CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71368CB71F90C71C00738CE8 /* Assets.xcassets */; };
 		71368CBB1F90C71C00738CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71368CB91F90C71C00738CE8 /* LaunchScreen.storyboard */; };
 		71368CC61F90C71D00738CE8 /* AR_InfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CC51F90C71D00738CE8 /* AR_InfoTests.swift */; };
 		71368CD11F90C71D00738CE8 /* AR_InfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CD01F90C71D00738CE8 /* AR_InfoUITests.swift */; };
 		71368CDF1F90C99000738CE8 /* AnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CDE1F90C99000738CE8 /* AnnotationNode.swift */; };
-		7172E21D1FD9887C0079DB5F /* DatabaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172E21C1FD9887C0079DB5F /* DatabaseTableViewController.swift */; };
+		7172E21D1FD9887C0079DB5F /* ContainersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172E21C1FD9887C0079DB5F /* ContainersTableViewController.swift */; };
 		718D77EA1F90F3E40087BF69 /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718D77E91F90F3E40087BF69 /* POI.swift */; };
 		894556D7BF10707E6178BBC8 /* Pods_AR_InfoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A4533B69C6D586C7865FF3 /* Pods_AR_InfoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -41,14 +47,21 @@
 
 /* Begin PBXFileReference section */
 		08E478D795AB868C0C9C6882 /* Pods-AR-InfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-InfoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AR-InfoTests/Pods-AR-InfoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		275EBB331FD991E9000F41B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		275EBB361FD9938D000F41B2 /* UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
+		275EBB381FD993B6000F41B2 /* AddContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContainerViewController.swift; sourceTree = "<group>"; };
+		275EBB3B1FD99497000F41B2 /* ar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ar.xcdatamodel; sourceTree = "<group>"; };
+		275EBB3E1FD99536000F41B2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		275EBB411FD9965E000F41B2 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		275EBB431FD99869000F41B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		275EBB451FD999EA000F41B2 /* ContainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableViewCell.swift; sourceTree = "<group>"; };
 		42EC7EAA8E55027CD11C2B02 /* Pods-AR-InfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-InfoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AR-InfoTests/Pods-AR-InfoTests.release.xcconfig"; sourceTree = "<group>"; };
 		52A4533B69C6D586C7865FF3 /* Pods_AR_InfoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_InfoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F40A93F4D5FE72E31FEC10 /* Pods_AR_InfoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_InfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71368CAD1F90C71C00738CE8 /* AR-Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71368CB01F90C71C00738CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		71368CB21F90C71C00738CE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71368CB21F90C71C00738CE8 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		71368CB51F90C71C00738CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		71368CB71F90C71C00738CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71368CBA1F90C71C00738CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71368CBC1F90C71C00738CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71368CC11F90C71C00738CE8 /* AR-InfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AR-InfoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +71,7 @@
 		71368CD01F90C71D00738CE8 /* AR_InfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_InfoUITests.swift; sourceTree = "<group>"; };
 		71368CD21F90C71D00738CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71368CDE1F90C99000738CE8 /* AnnotationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationNode.swift; sourceTree = "<group>"; };
-		7172E21C1FD9887C0079DB5F /* DatabaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTableViewController.swift; sourceTree = "<group>"; };
+		7172E21C1FD9887C0079DB5F /* ContainersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersTableViewController.swift; sourceTree = "<group>"; };
 		718D77E91F90F3E40087BF69 /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
 		78EC506FC563AE7CC280EAC3 /* Pods-AR-Info.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Info.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Info/Pods-AR-Info.debug.xcconfig"; sourceTree = "<group>"; };
 		922904580ED78B5766619326 /* Pods-AR-Info.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Info.release.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Info/Pods-AR-Info.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +108,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		275EBB311FD991CE000F41B2 /* AddContainer */ = {
+			isa = PBXGroup;
+			children = (
+				275EBB381FD993B6000F41B2 /* AddContainerViewController.swift */,
+			);
+			path = AddContainer;
+			sourceTree = "<group>";
+		};
+		275EBB321FD991E8000F41B2 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				71368CB01F90C71C00738CE8 /* AppDelegate.swift */,
+				71368CB91F90C71C00738CE8 /* LaunchScreen.storyboard */,
+				275EBB331FD991E9000F41B2 /* GoogleService-Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		275EBB341FD991F3000F41B2 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				71368CDE1F90C99000738CE8 /* AnnotationNode.swift */,
+				718D77E91F90F3E40087BF69 /* POI.swift */,
+				71368CB21F90C71C00738CE8 /* ARViewController.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		275EBB351FD9936A000F41B2 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				275EBB361FD9938D000F41B2 /* UITableViewController.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		275EBB3D1FD9952A000F41B2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				275EBB3E1FD99536000F41B2 /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		275EBB401FD99657000F41B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				275EBB411FD9965E000F41B2 /* Container.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		6A4DCEE94971BF09F9264F2B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,15 +198,17 @@
 		71368CAF1F90C71C00738CE8 /* AR-Info */ = {
 			isa = PBXGroup;
 			children = (
-				7172E21B1FD988640079DB5F /* Database */,
-				71368CB01F90C71C00738CE8 /* AppDelegate.swift */,
-				71368CB21F90C71C00738CE8 /* ViewController.swift */,
+				275EBB401FD99657000F41B2 /* Models */,
+				275EBB3D1FD9952A000F41B2 /* Managers */,
+				275EBB351FD9936A000F41B2 /* UIElements */,
+				275EBB321FD991E8000F41B2 /* Supporting files */,
+				275EBB341FD991F3000F41B2 /* AR */,
+				275EBB311FD991CE000F41B2 /* AddContainer */,
+				7172E21B1FD988640079DB5F /* Containers */,
 				71368CB41F90C71C00738CE8 /* Main.storyboard */,
-				71368CB71F90C71C00738CE8 /* Assets.xcassets */,
-				71368CB91F90C71C00738CE8 /* LaunchScreen.storyboard */,
+				275EBB431FD99869000F41B2 /* Assets.xcassets */,
 				71368CBC1F90C71C00738CE8 /* Info.plist */,
-				71368CDE1F90C99000738CE8 /* AnnotationNode.swift */,
-				718D77E91F90F3E40087BF69 /* POI.swift */,
+				275EBB3A1FD99497000F41B2 /* ar.xcdatamodeld */,
 			);
 			path = "AR-Info";
 			sourceTree = "<group>";
@@ -164,12 +231,13 @@
 			path = "AR-InfoUITests";
 			sourceTree = "<group>";
 		};
-		7172E21B1FD988640079DB5F /* Database */ = {
+		7172E21B1FD988640079DB5F /* Containers */ = {
 			isa = PBXGroup;
 			children = (
-				7172E21C1FD9887C0079DB5F /* DatabaseTableViewController.swift */,
+				7172E21C1FD9887C0079DB5F /* ContainersTableViewController.swift */,
+				275EBB451FD999EA000F41B2 /* ContainerTableViewCell.swift */,
 			);
-			path = Database;
+			path = Containers;
 			sourceTree = "<group>";
 		};
 		B9F06EF2C3355A9E33986ED9 /* Frameworks */ = {
@@ -299,7 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71368CBB1F90C71C00738CE8 /* LaunchScreen.storyboard in Resources */,
-				71368CB81F90C71C00738CE8 /* Assets.xcassets in Resources */,
+				275EBB441FD99869000F41B2 /* Assets.xcassets in Resources */,
 				71368CB61F90C71C00738CE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,10 +545,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275EBB391FD993B6000F41B2 /* AddContainerViewController.swift in Sources */,
 				718D77EA1F90F3E40087BF69 /* POI.swift in Sources */,
-				71368CB31F90C71C00738CE8 /* ViewController.swift in Sources */,
+				275EBB3C1FD99497000F41B2 /* ar.xcdatamodeld in Sources */,
+				71368CB31F90C71C00738CE8 /* ARViewController.swift in Sources */,
 				71368CDF1F90C99000738CE8 /* AnnotationNode.swift in Sources */,
-				7172E21D1FD9887C0079DB5F /* DatabaseTableViewController.swift in Sources */,
+				275EBB371FD9938D000F41B2 /* UITableViewController.swift in Sources */,
+				275EBB3F1FD99536000F41B2 /* CoreDataManager.swift in Sources */,
+				275EBB421FD9965E000F41B2 /* Container.swift in Sources */,
+				275EBB461FD999EA000F41B2 /* ContainerTableViewCell.swift in Sources */,
+				7172E21D1FD9887C0079DB5F /* ContainersTableViewController.swift in Sources */,
 				71368CB11F90C71C00738CE8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,7 +727,7 @@
 				INFOPLIST_FILE = "AR-Info/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "antoine.engelen.AR-Info";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ica.AR-Info";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -670,7 +744,7 @@
 				INFOPLIST_FILE = "AR-Info/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "antoine.engelen.AR-Info";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ica.AR-Info";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -783,6 +857,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		275EBB3A1FD99497000F41B2 /* ar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				275EBB3B1FD99497000F41B2 /* ar.xcdatamodel */,
+			);
+			currentVersion = 275EBB3B1FD99497000F41B2 /* ar.xcdatamodel */;
+			path = ar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 71368CA51F90C71C00738CE8 /* Project object */;
 }
