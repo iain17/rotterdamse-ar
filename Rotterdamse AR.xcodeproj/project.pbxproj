@@ -1,0 +1,763 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		275EBB371FD9938D000F41B2 /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB361FD9938D000F41B2 /* UITableViewController.swift */; };
+		275EBB391FD993B6000F41B2 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB381FD993B6000F41B2 /* ContainerViewController.swift */; };
+		275EBB3C1FD99497000F41B2 /* ar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB3A1FD99497000F41B2 /* ar.xcdatamodeld */; };
+		275EBB3F1FD99536000F41B2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB3E1FD99536000F41B2 /* CoreDataManager.swift */; };
+		275EBB421FD9965E000F41B2 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB411FD9965E000F41B2 /* Container.swift */; };
+		275EBB461FD999EA000F41B2 /* ContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB451FD999EA000F41B2 /* ContainerTableViewCell.swift */; };
+		27808F7C1FD9A0E50093594D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27808F7B1FD9A0E50093594D /* Assets.xcassets */; };
+		3FF3A9899E47743DAD89A2F5 /* Pods_Rotterdamse_AR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1765BB25322073B0140B46 /* Pods_Rotterdamse_AR.framework */; };
+		71368CB11F90C71C00738CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CB01F90C71C00738CE8 /* AppDelegate.swift */; };
+		71368CB31F90C71C00738CE8 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CB21F90C71C00738CE8 /* ARViewController.swift */; };
+		71368CB61F90C71C00738CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71368CB41F90C71C00738CE8 /* Main.storyboard */; };
+		71368CBB1F90C71C00738CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71368CB91F90C71C00738CE8 /* LaunchScreen.storyboard */; };
+		71368CC61F90C71D00738CE8 /* AR_InfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CC51F90C71D00738CE8 /* AR_InfoTests.swift */; };
+		71368CD11F90C71D00738CE8 /* AR_InfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CD01F90C71D00738CE8 /* AR_InfoUITests.swift */; };
+		71368CDF1F90C99000738CE8 /* AnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CDE1F90C99000738CE8 /* AnnotationNode.swift */; };
+		7172E21D1FD9887C0079DB5F /* ContainersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172E21C1FD9887C0079DB5F /* ContainersTableViewController.swift */; };
+		718D77EA1F90F3E40087BF69 /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718D77E91F90F3E40087BF69 /* POI.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71368CC21F90C71C00738CE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71368CA51F90C71C00738CE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71368CAC1F90C71C00738CE8;
+			remoteInfo = "AR-Info";
+		};
+		71368CCD1F90C71D00738CE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71368CA51F90C71C00738CE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71368CAC1F90C71C00738CE8;
+			remoteInfo = "AR-Info";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		275EBB361FD9938D000F41B2 /* UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
+		275EBB381FD993B6000F41B2 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		275EBB3B1FD99497000F41B2 /* ar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ar.xcdatamodel; sourceTree = "<group>"; };
+		275EBB3E1FD99536000F41B2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		275EBB411FD9965E000F41B2 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		275EBB451FD999EA000F41B2 /* ContainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableViewCell.swift; sourceTree = "<group>"; };
+		27808F7B1FD9A0E50093594D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		2E6676124D9FEF894ADCB3E2 /* Pods-Rotterdamse AR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rotterdamse AR.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rotterdamse AR/Pods-Rotterdamse AR.release.xcconfig"; sourceTree = "<group>"; };
+		52A4533B69C6D586C7865FF3 /* Pods_AR_InfoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_InfoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53B91B59143897B74A5A0001 /* Pods-Rotterdamse AR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rotterdamse AR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rotterdamse AR/Pods-Rotterdamse AR.debug.xcconfig"; sourceTree = "<group>"; };
+		61F40A93F4D5FE72E31FEC10 /* Pods_AR_InfoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_InfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1765BB25322073B0140B46 /* Pods_Rotterdamse_AR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rotterdamse_AR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71368CAD1F90C71C00738CE8 /* Rotterdamse AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rotterdamse AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71368CB01F90C71C00738CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		71368CB21F90C71C00738CE8 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		71368CB51F90C71C00738CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		71368CBA1F90C71C00738CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		71368CBC1F90C71C00738CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71368CC11F90C71C00738CE8 /* Rotterdamse ARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rotterdamse ARTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71368CC51F90C71D00738CE8 /* AR_InfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_InfoTests.swift; sourceTree = "<group>"; };
+		71368CC71F90C71D00738CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71368CCC1F90C71D00738CE8 /* Rotterdamse ARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rotterdamse ARUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71368CD01F90C71D00738CE8 /* AR_InfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_InfoUITests.swift; sourceTree = "<group>"; };
+		71368CD21F90C71D00738CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71368CDE1F90C99000738CE8 /* AnnotationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationNode.swift; sourceTree = "<group>"; };
+		7172E21C1FD9887C0079DB5F /* ContainersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersTableViewController.swift; sourceTree = "<group>"; };
+		718D77E91F90F3E40087BF69 /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
+		78EC506FC563AE7CC280EAC3 /* Pods-AR-Info.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Info.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Info/Pods-AR-Info.debug.xcconfig"; sourceTree = "<group>"; };
+		922904580ED78B5766619326 /* Pods-AR-Info.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Info.release.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Info/Pods-AR-Info.release.xcconfig"; sourceTree = "<group>"; };
+		CA4DE888C580761C2F9FD242 /* Pods_AR_Info.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Info.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71368CAA1F90C71C00738CE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF3A9899E47743DAD89A2F5 /* Pods_Rotterdamse_AR.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71368CBE1F90C71C00738CE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71368CC91F90C71D00738CE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		275EBB311FD991CE000F41B2 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				275EBB381FD993B6000F41B2 /* ContainerViewController.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		275EBB321FD991E8000F41B2 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				71368CBC1F90C71C00738CE8 /* Info.plist */,
+				71368CB01F90C71C00738CE8 /* AppDelegate.swift */,
+				71368CB91F90C71C00738CE8 /* LaunchScreen.storyboard */,
+				27808F7B1FD9A0E50093594D /* Assets.xcassets */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		275EBB341FD991F3000F41B2 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				71368CDE1F90C99000738CE8 /* AnnotationNode.swift */,
+				718D77E91F90F3E40087BF69 /* POI.swift */,
+				71368CB21F90C71C00738CE8 /* ARViewController.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		275EBB351FD9936A000F41B2 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				275EBB361FD9938D000F41B2 /* UITableViewController.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		275EBB3D1FD9952A000F41B2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				275EBB3E1FD99536000F41B2 /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		275EBB401FD99657000F41B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				275EBB411FD9965E000F41B2 /* Container.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6A4DCEE94971BF09F9264F2B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78EC506FC563AE7CC280EAC3 /* Pods-AR-Info.debug.xcconfig */,
+				922904580ED78B5766619326 /* Pods-AR-Info.release.xcconfig */,
+				53B91B59143897B74A5A0001 /* Pods-Rotterdamse AR.debug.xcconfig */,
+				2E6676124D9FEF894ADCB3E2 /* Pods-Rotterdamse AR.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		71368CA41F90C71C00738CE8 = {
+			isa = PBXGroup;
+			children = (
+				71368CAF1F90C71C00738CE8 /* Rotterdamse AR */,
+				71368CC41F90C71D00738CE8 /* Rotterdamse-ARTests */,
+				71368CCF1F90C71D00738CE8 /* Rotterdamse-ARUITests */,
+				71368CAE1F90C71C00738CE8 /* Products */,
+				6A4DCEE94971BF09F9264F2B /* Pods */,
+				B9F06EF2C3355A9E33986ED9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		71368CAE1F90C71C00738CE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71368CAD1F90C71C00738CE8 /* Rotterdamse AR.app */,
+				71368CC11F90C71C00738CE8 /* Rotterdamse ARTests.xctest */,
+				71368CCC1F90C71D00738CE8 /* Rotterdamse ARUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71368CAF1F90C71C00738CE8 /* Rotterdamse AR */ = {
+			isa = PBXGroup;
+			children = (
+				275EBB401FD99657000F41B2 /* Models */,
+				275EBB3D1FD9952A000F41B2 /* Managers */,
+				275EBB351FD9936A000F41B2 /* UIElements */,
+				275EBB321FD991E8000F41B2 /* Supporting files */,
+				275EBB341FD991F3000F41B2 /* AR */,
+				275EBB311FD991CE000F41B2 /* Container */,
+				7172E21B1FD988640079DB5F /* Containers */,
+				71368CB41F90C71C00738CE8 /* Main.storyboard */,
+				275EBB3A1FD99497000F41B2 /* ar.xcdatamodeld */,
+			);
+			path = "Rotterdamse AR";
+			sourceTree = "<group>";
+		};
+		71368CC41F90C71D00738CE8 /* Rotterdamse-ARTests */ = {
+			isa = PBXGroup;
+			children = (
+				71368CC51F90C71D00738CE8 /* AR_InfoTests.swift */,
+				71368CC71F90C71D00738CE8 /* Info.plist */,
+			);
+			path = "Rotterdamse-ARTests";
+			sourceTree = "<group>";
+		};
+		71368CCF1F90C71D00738CE8 /* Rotterdamse-ARUITests */ = {
+			isa = PBXGroup;
+			children = (
+				71368CD01F90C71D00738CE8 /* AR_InfoUITests.swift */,
+				71368CD21F90C71D00738CE8 /* Info.plist */,
+			);
+			path = "Rotterdamse-ARUITests";
+			sourceTree = "<group>";
+		};
+		7172E21B1FD988640079DB5F /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				7172E21C1FD9887C0079DB5F /* ContainersTableViewController.swift */,
+				275EBB451FD999EA000F41B2 /* ContainerTableViewCell.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		B9F06EF2C3355A9E33986ED9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA4DE888C580761C2F9FD242 /* Pods_AR_Info.framework */,
+				61F40A93F4D5FE72E31FEC10 /* Pods_AR_InfoTests.framework */,
+				52A4533B69C6D586C7865FF3 /* Pods_AR_InfoUITests.framework */,
+				6D1765BB25322073B0140B46 /* Pods_Rotterdamse_AR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71368CAC1F90C71C00738CE8 /* Rotterdamse AR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71368CD51F90C71D00738CE8 /* Build configuration list for PBXNativeTarget "Rotterdamse AR" */;
+			buildPhases = (
+				14666C04B676A6EA70744A04 /* [CP] Check Pods Manifest.lock */,
+				71368CA91F90C71C00738CE8 /* Sources */,
+				71368CAA1F90C71C00738CE8 /* Frameworks */,
+				71368CAB1F90C71C00738CE8 /* Resources */,
+				BC3C040F7AAB9992D5509646 /* [CP] Embed Pods Frameworks */,
+				671F4F6CA8A945D135FE00BC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rotterdamse AR";
+			productName = "AR-Info";
+			productReference = 71368CAD1F90C71C00738CE8 /* Rotterdamse AR.app */;
+			productType = "com.apple.product-type.application";
+		};
+		71368CC01F90C71C00738CE8 /* Rotterdamse ARTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71368CD81F90C71D00738CE8 /* Build configuration list for PBXNativeTarget "Rotterdamse ARTests" */;
+			buildPhases = (
+				71368CBD1F90C71C00738CE8 /* Sources */,
+				71368CBE1F90C71C00738CE8 /* Frameworks */,
+				71368CBF1F90C71C00738CE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71368CC31F90C71C00738CE8 /* PBXTargetDependency */,
+			);
+			name = "Rotterdamse ARTests";
+			productName = "AR-InfoTests";
+			productReference = 71368CC11F90C71C00738CE8 /* Rotterdamse ARTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		71368CCB1F90C71D00738CE8 /* Rotterdamse ARUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71368CDB1F90C71D00738CE8 /* Build configuration list for PBXNativeTarget "Rotterdamse ARUITests" */;
+			buildPhases = (
+				71368CC81F90C71D00738CE8 /* Sources */,
+				71368CC91F90C71D00738CE8 /* Frameworks */,
+				71368CCA1F90C71D00738CE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71368CCE1F90C71D00738CE8 /* PBXTargetDependency */,
+			);
+			name = "Rotterdamse ARUITests";
+			productName = "AR-InfoUITests";
+			productReference = 71368CCC1F90C71D00738CE8 /* Rotterdamse ARUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		71368CA51F90C71C00738CE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Antoine Engelen";
+				TargetAttributes = {
+					71368CAC1F90C71C00738CE8 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					71368CC01F90C71C00738CE8 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 71368CAC1F90C71C00738CE8;
+					};
+					71368CCB1F90C71D00738CE8 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 71368CAC1F90C71C00738CE8;
+					};
+				};
+			};
+			buildConfigurationList = 71368CA81F90C71C00738CE8 /* Build configuration list for PBXProject "Rotterdamse AR" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 71368CA41F90C71C00738CE8;
+			productRefGroup = 71368CAE1F90C71C00738CE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				71368CAC1F90C71C00738CE8 /* Rotterdamse AR */,
+				71368CC01F90C71C00738CE8 /* Rotterdamse ARTests */,
+				71368CCB1F90C71D00738CE8 /* Rotterdamse ARUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		71368CAB1F90C71C00738CE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71368CBB1F90C71C00738CE8 /* LaunchScreen.storyboard in Resources */,
+				27808F7C1FD9A0E50093594D /* Assets.xcassets in Resources */,
+				71368CB61F90C71C00738CE8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71368CBF1F90C71C00738CE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71368CCA1F90C71D00738CE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14666C04B676A6EA70744A04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rotterdamse AR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		671F4F6CA8A945D135FE00BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rotterdamse AR/Pods-Rotterdamse AR-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC3C040F7AAB9992D5509646 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Rotterdamse AR/Pods-Rotterdamse AR-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARCL/ARCL.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageRow/ImageRow.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageRow.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rotterdamse AR/Pods-Rotterdamse AR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71368CA91F90C71C00738CE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275EBB391FD993B6000F41B2 /* ContainerViewController.swift in Sources */,
+				718D77EA1F90F3E40087BF69 /* POI.swift in Sources */,
+				275EBB3C1FD99497000F41B2 /* ar.xcdatamodeld in Sources */,
+				71368CB31F90C71C00738CE8 /* ARViewController.swift in Sources */,
+				71368CDF1F90C99000738CE8 /* AnnotationNode.swift in Sources */,
+				275EBB371FD9938D000F41B2 /* UITableViewController.swift in Sources */,
+				275EBB3F1FD99536000F41B2 /* CoreDataManager.swift in Sources */,
+				275EBB421FD9965E000F41B2 /* Container.swift in Sources */,
+				275EBB461FD999EA000F41B2 /* ContainerTableViewCell.swift in Sources */,
+				7172E21D1FD9887C0079DB5F /* ContainersTableViewController.swift in Sources */,
+				71368CB11F90C71C00738CE8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71368CBD1F90C71C00738CE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71368CC61F90C71D00738CE8 /* AR_InfoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71368CC81F90C71D00738CE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71368CD11F90C71D00738CE8 /* AR_InfoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71368CC31F90C71C00738CE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71368CAC1F90C71C00738CE8 /* Rotterdamse AR */;
+			targetProxy = 71368CC21F90C71C00738CE8 /* PBXContainerItemProxy */;
+		};
+		71368CCE1F90C71D00738CE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71368CAC1F90C71C00738CE8 /* Rotterdamse AR */;
+			targetProxy = 71368CCD1F90C71D00738CE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		71368CB41F90C71C00738CE8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71368CB51F90C71C00738CE8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		71368CB91F90C71C00738CE8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71368CBA1F90C71C00738CE8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		71368CD31F90C71D00738CE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		71368CD41F90C71D00738CE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71368CD61F90C71D00738CE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53B91B59143897B74A5A0001 /* Pods-Rotterdamse AR.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6BSBW655NT;
+				INFOPLIST_FILE = "$(SRCROOT)/Rotterdamse AR/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ica.AR-Info";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		71368CD71F90C71D00738CE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E6676124D9FEF894ADCB3E2 /* Pods-Rotterdamse AR.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6BSBW655NT;
+				INFOPLIST_FILE = "$(SRCROOT)/Rotterdamse AR/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ica.AR-Info";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		71368CD91F90C71D00738CE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "AR-InfoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "antoine.engelen.AR-InfoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rotterdamse AR.app/Rotterdamse AR";
+			};
+			name = Debug;
+		};
+		71368CDA1F90C71D00738CE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "AR-InfoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "antoine.engelen.AR-InfoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rotterdamse AR.app/Rotterdamse AR";
+			};
+			name = Release;
+		};
+		71368CDC1F90C71D00738CE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "AR-InfoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "antoine.engelen.AR-InfoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "AR-Info";
+			};
+			name = Debug;
+		};
+		71368CDD1F90C71D00738CE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "AR-InfoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "antoine.engelen.AR-InfoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "AR-Info";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		71368CA81F90C71C00738CE8 /* Build configuration list for PBXProject "Rotterdamse AR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71368CD31F90C71D00738CE8 /* Debug */,
+				71368CD41F90C71D00738CE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71368CD51F90C71D00738CE8 /* Build configuration list for PBXNativeTarget "Rotterdamse AR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71368CD61F90C71D00738CE8 /* Debug */,
+				71368CD71F90C71D00738CE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71368CD81F90C71D00738CE8 /* Build configuration list for PBXNativeTarget "Rotterdamse ARTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71368CD91F90C71D00738CE8 /* Debug */,
+				71368CDA1F90C71D00738CE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71368CDB1F90C71D00738CE8 /* Build configuration list for PBXNativeTarget "Rotterdamse ARUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71368CDC1F90C71D00738CE8 /* Debug */,
+				71368CDD1F90C71D00738CE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		275EBB3A1FD99497000F41B2 /* ar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				275EBB3B1FD99497000F41B2 /* ar.xcdatamodel */,
+			);
+			currentVersion = 275EBB3B1FD99497000F41B2 /* ar.xcdatamodel */;
+			path = ar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 71368CA51F90C71C00738CE8 /* Project object */;
+}
