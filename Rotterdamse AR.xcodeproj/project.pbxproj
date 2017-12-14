@@ -13,8 +13,8 @@
 		275EBB3F1FD99536000F41B2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB3E1FD99536000F41B2 /* CoreDataManager.swift */; };
 		275EBB421FD9965E000F41B2 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB411FD9965E000F41B2 /* Container.swift */; };
 		275EBB461FD999EA000F41B2 /* ContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EBB451FD999EA000F41B2 /* ContainerTableViewCell.swift */; };
-		27808F7C1FD9A0E50093594D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27808F7B1FD9A0E50093594D /* Assets.xcassets */; };
 		3FF3A9899E47743DAD89A2F5 /* Pods_Rotterdamse_AR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1765BB25322073B0140B46 /* Pods_Rotterdamse_AR.framework */; };
+		710E19591FE2D5F100E7527C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710E19581FE2D5F000E7527C /* Assets.xcassets */; };
 		71368CB11F90C71C00738CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CB01F90C71C00738CE8 /* AppDelegate.swift */; };
 		71368CB31F90C71C00738CE8 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CB21F90C71C00738CE8 /* ARViewController.swift */; };
 		71368CB61F90C71C00738CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71368CB41F90C71C00738CE8 /* Main.storyboard */; };
@@ -50,12 +50,12 @@
 		275EBB3E1FD99536000F41B2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		275EBB411FD9965E000F41B2 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		275EBB451FD999EA000F41B2 /* ContainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableViewCell.swift; sourceTree = "<group>"; };
-		27808F7B1FD9A0E50093594D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		2E6676124D9FEF894ADCB3E2 /* Pods-Rotterdamse AR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rotterdamse AR.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rotterdamse AR/Pods-Rotterdamse AR.release.xcconfig"; sourceTree = "<group>"; };
 		52A4533B69C6D586C7865FF3 /* Pods_AR_InfoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_InfoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B91B59143897B74A5A0001 /* Pods-Rotterdamse AR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rotterdamse AR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rotterdamse AR/Pods-Rotterdamse AR.debug.xcconfig"; sourceTree = "<group>"; };
 		61F40A93F4D5FE72E31FEC10 /* Pods_AR_InfoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_InfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1765BB25322073B0140B46 /* Pods_Rotterdamse_AR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rotterdamse_AR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		710E19581FE2D5F000E7527C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71368CAD1F90C71C00738CE8 /* Rotterdamse AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rotterdamse AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71368CB01F90C71C00738CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71368CB21F90C71C00738CE8 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -113,10 +113,10 @@
 		275EBB321FD991E8000F41B2 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				710E19581FE2D5F000E7527C /* Assets.xcassets */,
 				71368CBC1F90C71C00738CE8 /* Info.plist */,
 				71368CB01F90C71C00738CE8 /* AppDelegate.swift */,
 				71368CB91F90C71C00738CE8 /* LaunchScreen.storyboard */,
-				27808F7B1FD9A0E50093594D /* Assets.xcassets */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71368CBB1F90C71C00738CE8 /* LaunchScreen.storyboard in Resources */,
-				27808F7C1FD9A0E50093594D /* Assets.xcassets in Resources */,
+				710E19591FE2D5F100E7527C /* Assets.xcassets in Resources */,
 				71368CB61F90C71C00738CE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
