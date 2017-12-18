@@ -42,6 +42,12 @@ class POI: UITableViewController {
     //                       ["51.986946", "5.952091", "12.5", "pin", "HAN C-Vleugel\nRuitenberglaan 26\nArnhem\nThe Netherlands"]]
     //   }
     
+    func removePointsOfinterest(sceneLocationView: SceneLocationView) {
+        for eachNode in sceneLocationView.scene.rootNode.childNodes {
+            eachNode.removeFromParentNode()
+        }
+    }
+    
     func makePointsOfinterest(sceneLocationView: SceneLocationView, viewController: ARViewController) {
         var tempLocation: CLLocation? = nil
         //        for group in self.groups {
@@ -75,7 +81,7 @@ class POI: UITableViewController {
             }
             tempLocation = pinLocation
             let pinImage = group.getPicture()
-            let pinLocationNode = LocationAnnotationNode(location: pinLocation, image: overlayTextOverImage(image: pinImage!, text: group.name!, viewController: viewController)!)
+            let pinLocationNode = LocationAnnotationNode(location: pinLocation, image: overlayTextOverImage(image: pinImage!, text: group.name! + "\n" + group.notes!, viewController: viewController)!)
             pinLocationNode.scaleRelativeToDistance = true
             pinLocationNode.castsShadow = true
             sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: pinLocationNode)

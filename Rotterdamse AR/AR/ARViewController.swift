@@ -33,6 +33,7 @@ class ARViewController: UIViewController, SceneLocationViewDelegate{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneLocationView.pause()
+//        poi.removePointsOfinterest(sceneLocationView: sceneLocationView)
     }
     
     override func viewDidLayoutSubviews() {
