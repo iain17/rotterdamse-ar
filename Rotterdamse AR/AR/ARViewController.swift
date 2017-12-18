@@ -22,12 +22,12 @@ class ARViewController: UIViewController, SceneLocationViewDelegate{
         sceneLocationView.orientToTrueNorth = true
         sceneLocationView.locationEstimateMethod = .mostRelevantEstimate
         view.addSubview(sceneLocationView)
-        poi.makePointsOfinterest(sceneLocationView: sceneLocationView, viewController: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         sceneLocationView.run()
+        poi.makePointsOfinterest(sceneLocationView: sceneLocationView, viewController: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
