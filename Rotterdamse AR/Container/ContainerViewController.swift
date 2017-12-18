@@ -70,7 +70,7 @@ class ContainerViewController: FormViewController {
             currentLocation = locManager.location
         }
         if let location = currentLocation {
-            if location.horizontalAccuracy > 5 {
+            if location.horizontalAccuracy >= 65 {
                 self.showError(title: "Can't get your location", message: "\(location.horizontalAccuracy) meters is not accurate enough")
                 return
             }
