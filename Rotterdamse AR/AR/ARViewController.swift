@@ -8,12 +8,12 @@
 
 import UIKit
 import SceneKit
-import ARCL
 import CoreLocation
+import ARCL
 
 @available(iOS 11.0, *)
 class ARViewController: UIViewController, SceneLocationViewDelegate{
-    let sceneLocationView = SceneLocationView()
+    let sceneLocationView = (UIApplication.shared.delegate as! AppDelegate).sceneLocationView
     let annotationNode = AnnotationNode()
     let poi = POI()
     

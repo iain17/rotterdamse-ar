@@ -1,19 +1,29 @@
 PODS:
-  - ARCL (1.0.1)
+  - ARCL (1.0.2)
   - Eureka (4.0.1)
   - ImageRow (3.0.0):
     - Eureka (~> 4.0)
 
 DEPENDENCIES:
-  - ARCL (~> 1.0)
+  - ARCL (from `https://github.com/iain17/ARKit-CoreLocation.git`, branch `master`)
   - Eureka
   - ImageRow (~> 3.0)
 
+EXTERNAL SOURCES:
+  ARCL:
+    :branch: master
+    :git: https://github.com/iain17/ARKit-CoreLocation.git
+
+CHECKOUT OPTIONS:
+  ARCL:
+    :commit: 1a409aef101c8337509411d0555adf16ad8b2c58
+    :git: https://github.com/iain17/ARKit-CoreLocation.git
+
 SPEC CHECKSUMS:
-  ARCL: 193b108d6fd5277ce742be3af92ccf81bbdd2f3b
+  ARCL: 81ca9299eec52de30fb6e2b11ea5728e2e0a3c1f
   Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
   ImageRow: 048123c296de9a6ac3998c415a6706c45ce480af
 
-PODFILE CHECKSUM: 1c6cd6528d78e32415b32dc1c8847145ced9bf4d
+PODFILE CHECKSUM: ed7db8d0f10c0cb867afce3b706d11bcdf254b57
 
 COCOAPODS: 1.3.1

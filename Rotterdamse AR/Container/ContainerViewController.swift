@@ -14,7 +14,7 @@ import CoreLocation
 class ContainerViewController: FormViewController {
     fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
     public var container: Container!
-    var locManager = CLLocationManager()
+    let sceneLocationView = (UIApplication.shared.delegate as! AppDelegate).sceneLocationView
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,6 @@ class ContainerViewController: FormViewController {
         if self.title == nil {
             self.title = "Register container"
         }
-        locManager.requestWhenInUseAuthorization()
         
         self.form +++ Section("Container basic info")
             <<< TextRow(){ row in
@@ -65,11 +64,7 @@ class ContainerViewController: FormViewController {
     }
 
     func updatePosition() {
-        var currentLocation: CLLocation?
-        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorized){
-            currentLocation = locManager.location
-        }
-        if let location = currentLocation {
+        if let location = self.sceneLocationView.currentLocation() {
             if location.horizontalAccuracy >= 32 {
                 self.showError(title: "Can't get your location", message: "\(location.horizontalAccuracy) meters is not accurate enough")
                 return
@@ -97,13 +92,13 @@ class ContainerViewController: FormViewController {
             self.container.created = Date()
         }
         
-//        if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
-//            self.updatePosition()
-//        }
+        if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
+            self.updatePosition()
+        }
         
-//        if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
-//            return
-//        }
+        if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
+            return
+        }
         
         if self.container.picture == nil {
             self.showError(title: "No picture", message: "Please select or make a picture of the container")
