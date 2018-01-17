@@ -11,25 +11,68 @@ import UIKit
 import CoreLocation
 import ARCL
 import SceneKit
-import CoreData
+import Firebase
 
 class POI: UITableViewController {
-    fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
-    fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Container> = {
-        // Create Fetch Request
-        let fetchRequest: NSFetchRequest<Container> = Container.fetchRequest()
+    var refContainers: DatabaseReference!
+    
+    var containerList = [Container]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        // Configure Fetch Request
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: false)]
+        FirebaseApp.configure()
         
-        // Create Fetched Results Controller
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.coreDataManager.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        refContainers = Database.database().reference().child("containers");
         
-        // Configure Fetched Results Controller
-        fetchedResultsController.delegate = self
-        
-        return fetchedResultsController
-    }()
+        //observing the data changes
+        refContainers.observe(DataEventType.value, with: { (snapshot) in
+            
+            //if the reference have some values
+            if snapshot.childrenCount > 0 {
+                
+                //clearing the list
+                self.containerList.removeAll()
+                
+                //iterating through all the values
+                for containers in snapshot.children.allObjects as! [DataSnapshot] {
+                    //getting values
+                    let containerObject = containers.value as? [String: AnyObject]
+                    let containerName  = containerObject?["name"]
+                    let containerId  = containerObject?["id"]
+                    let containerDesc = containerObject?["desc"]
+                    let containerImage = containerObject?["image"]
+                    let containerLat = containerObject?["lat"]
+                    let containerLong = containerObject?["long"]
+                    
+                    //creating artist object with model and fetched values
+                    let container = Container(id: containerId as! String?, name: containerName as! String?, desc: containerDesc as! String?, picture: containerImage as! UIImage?, lat: containerLat as! Double?, long: containerLong as! Double?)
+                    
+                    //appending it to list
+                    self.containerList.append(container)
+                }
+                
+                //reloading the tableview
+//                self.tableViewContainers.reloadData()
+            }
+        })
+    }
+//    fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
+//    fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Container> = {
+//        // Create Fetch Request
+//        let fetchRequest: NSFetchRequest<Container> = Container.fetchRequest()
+//
+//        // Configure Fetch Request
+//        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: false)]
+//
+//        // Create Fetched Results Controller
+//        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.coreDataManager.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+//
+//        // Configure Fetched Results Controller
+//        fetchedResultsController.delegate = self
+//
+//        return fetchedResultsController
+//    }()
     
     var groups = [[String]]()
     
@@ -37,23 +80,17 @@ class POI: UITableViewController {
         sceneLocationView.removeAll()
         
         var tempLocation: CLLocation? = nil
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            let fetchError = error as NSError
-            print("Unable to fetch containers")
-            print("\(fetchError), \(fetchError.localizedDescription)")
-        }
         
-        let sections = fetchedResultsController.fetchedObjects
-        for group in sections! {
+        let sections = self.containerList
+        for group in sections {
             let pinCoordinate = CLLocationCoordinate2D(latitude: Double(group.lat), longitude: Double(group.lng))
             let pinLocation = CLLocation(coordinate: pinCoordinate, altitude: Double(group.altitude))
             if tempLocation != nil {
                 print(pinLocation.distance(from: tempLocation!))
             }
             tempLocation = pinLocation
-            let pinImage = group.getPicture()
+//            let pinImage = group.getPicture()
+            let pinImage: UIImage? = nil
             if pinImage == nil {
                 continue
             }

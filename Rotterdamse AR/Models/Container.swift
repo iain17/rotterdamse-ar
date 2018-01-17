@@ -7,19 +7,38 @@
 //
 
 import Foundation
-import CoreData
+//import CoreData
 import EventKit
 import UIKit
 
-public class Container: NSManagedObject {
-    func resetToDefaults() {
-        
-    }
+//public class Container: NSManagedObject {
+//    func resetToDefaults() {
+//
+//    }
+//
+//    func getPicture() -> UIImage? {
+//        if let picture = self.picture {
+//            return UIImage(data: picture)
+//        }
+//        return nil
+//    }
+//}
+
+class Container {
     
-    func getPicture() -> UIImage? {
-        if let picture = self.picture {
-            return UIImage(data: picture)
-        }
-        return nil
+    var id: String?
+    var containerName: String?
+    var desc: String?
+    var containerPicture: UIImage?
+    var containerLat: Double?
+    var containerLong: Double?
+    
+    init(id: String?, name: String?, desc: String?, picture: UIImage?, lat: Double?, long: Double?){
+        self.id = id
+        self.containerName = name
+        self.desc = desc
+        self.containerPicture = picture
+        self.containerLat = lat
+        self.containerLong = long
     }
 }

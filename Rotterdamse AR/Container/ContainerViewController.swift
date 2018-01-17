@@ -12,7 +12,7 @@ import ImageRow
 import CoreLocation
 
 class ContainerViewController: FormViewController {
-    fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
+//    fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
     public var container: Container!
     let sceneLocationView = (UIApplication.shared.delegate as! AppDelegate).sceneLocationView
     
@@ -111,7 +111,7 @@ class ContainerViewController: FormViewController {
         }
         
         do {
-            try coreDataManager.managedObjectContext.save()
+//            try coreDataManager.managedObjectContext.save()
             self.navigationController?.popViewController(animated: true)
         } catch let error {
             print(error)
