@@ -18,7 +18,7 @@ class ContainerViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = container.name
+        self.title = container.containerName
         if self.title == nil {
             self.title = "Register container"
         }
@@ -27,23 +27,23 @@ class ContainerViewController: FormViewController {
             <<< TextRow(){ row in
                 row.title = "* Name"
                 row.placeholder = "Enter container name"
-                row.value = self.container.name
+                row.value = self.container.containerName
             }.onChange({ (row) in
-                self.container.name = row.value
+                self.container.containerName = row.value
             })
             <<< TextAreaRow() {
                 $0.title = "Notes"
                 $0.placeholder = "Anything special about this container?"
                 $0.textAreaHeight = .dynamic(initialTextViewHeight: 110)
-                $0.value = self.container.notes
+                $0.value = self.container.desc
             }.onChange({ (row) in
-                self.container.notes = row.value
+                self.container.desc = row.value
             })
             <<< ImageRow() {
                 $0.title = "* Picture"
                 $0.sourceTypes = .All
                 $0.clearAction = .no
-                if let picture = self.container.picture {
+                if let picture = self.container.containerPicture {
                     $0.value = UIImage(data: picture)
                 }
             }.cellUpdate { cell, row in
@@ -52,7 +52,7 @@ class ContainerViewController: FormViewController {
             }.onChange({ (row) in
                 if let value = row.value {
                     if let data = UIImagePNGRepresentation(value) as Data? {
-                        self.container.picture = data as Data
+                        self.container.containerPicture = data as Data
                     }
                 }
             })
@@ -69,9 +69,9 @@ class ContainerViewController: FormViewController {
                 self.showError(title: "Can't get your location", message: "\(location.horizontalAccuracy) meters is not accurate enough")
                 return
             }
-            self.container.lat = location.coordinate.latitude
-            self.container.lng = location.coordinate.longitude
-            self.container.altitude = Double(location.altitude)
+            self.container.containerLat = location.coordinate.latitude
+            self.container.containerLong = location.coordinate.longitude
+            self.container.containerAltitude = Double(location.altitude)
             self.showError(title: "Location set", message: "Container location registered with \(location.horizontalAccuracy) meters of accuracy")
         }
     }
@@ -88,24 +88,24 @@ class ContainerViewController: FormViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        if self.container.created == nil {
-            self.container.created = Date()
+        if self.container.containerCreated == nil {
+            self.container.containerCreated = Date()
         }
         
-        if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
+        if self.container.containerLat == 0.0 || self.container.containerLong  == 0.0 || self.container.containerAltitude  == 0.0 {
             self.updatePosition()
         }
         
-        if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
+        if self.container.containerLat == 0.0 || self.container.containerLong  == 0.0 || self.container.containerAltitude  == 0.0 {
             return
         }
         
-        if self.container.picture == nil {
+        if self.container.containerPicture == nil {
             self.showError(title: "No picture", message: "Please select or make a picture of the container")
             return
         }
         
-        if self.container.name == nil {
+        if self.container.containerName == nil {
             self.showError(title: "No name", message: "Please enter a name of the container")
             return
         }

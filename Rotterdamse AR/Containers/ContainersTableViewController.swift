@@ -14,33 +14,14 @@ class GoalsTableViewController: UITableViewController {
     let reuseIdentifier = "ContainerCell"
     
     var refContainers: DatabaseReference!
-    
-//    fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
+
+    @IBOutlet weak var tableViewContainers: UITableView!
     
     var containerList = [Container]()
-    
-    
-//    fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Container> = {
-//        // Create Fetch Request
-//        let fetchRequest: NSFetchRequest<Container> = Container.fetchRequest()
-//
-//        // Configure Fetch Request
-//        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: false)]
-//
-//        // Create Fetched Results Controller
-//        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.coreDataManager.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-//
-//        // Configure Fetched Results Controller
-//        fetchedResultsController.delegate = self
-//
-//        return fetchedResultsController
-//    }()
     
     override func viewDidLoad() {
         refresh(1)
         self.refreshControl?.endRefreshing()
-        
-        FirebaseApp.configure()
         
         refContainers = Database.database().reference().child("containers");
         
@@ -63,28 +44,20 @@ class GoalsTableViewController: UITableViewController {
                     let containerImage = containerObject?["image"]
                     let containerLat = containerObject?["lat"]
                     let containerLong = containerObject?["long"]
+                    let containerAltitude = containerObject?["altitude"]
+                    let containerCreated = containerObject?["created"]
                     
                     //creating artist object with model and fetched values
-                    let container = Container(id: containerId as! String?, name: containerName as! String?, desc: containerDesc as! String?, picture: containerImage as! UIImage?, lat: containerLat as! Double?, long: containerLong as! Double?)
+                    let container = Container(id: containerId as! Int?, name: containerName as! String?, desc: containerDesc as! String?, picture: containerImage as! String?, lat: containerLat as! Double?, long: containerLong as! Double?, altitude: containerAltitude as! Double?, created: containerCreated as! String?)
                     
                     //appending it to list
                     self.containerList.append(container)
                 }
                 
                 //reloading the tableview
-//                self.tableViewContainers.reloadData()
+                self.tableViewContainers.reloadData()
             }
         })
-    }
-    
-    @IBAction func refresh(_ sender: Any) {
-        do {
-//            try fetchedResultsController.performFetch()
-        } catch {
-            let fetchError = error as NSError
-            print("Unable to fetch containers")
-            print("\(fetchError), \(fetchError.localizedDescription)")
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -99,42 +72,16 @@ class GoalsTableViewController: UITableViewController {
         return containerList.count
     }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        guard editingStyle == .delete else { return }
-//        let object = fetchedResultsController.object(at: indexPath)
-//        fetchedResultsController.managedObjectContext.delete(object)
-//        try? fetchedResultsController.managedObjectContext.save()
-//    }
-    
-//    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-//        //creating a cell using the custom class
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContainerTableViewCell
-//
-//        //the artist object
-//        let container: Container
-//
-//        //getting the artist of selected position
-//        container = containerList[indexPath.row]
-//
-//        //adding values to labels
-//        cell.labelName.text = container.name
-//        cell.labelGenre.text = container.desc
-//
-//        //returning cell
-//        return cell
-//    }
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath) as? ContainerTableViewCell else {
-//            fatalError("Unexpected Index Path")
-//        }
-//
-//        let container = fetchedResultsController.object(at: indexPath)
-//        cell.container = container
-//
-//        return cell
-//    }
-//
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath) as? ContainerTableViewCell else {
+            fatalError("Unexpected Index Path")
+        }
+        
+        let container = self.containerList[indexPath.row]
+        cell.container = container
+        
+        return cell
+    }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let desination = segue.destination as? ContainerViewController {
@@ -143,7 +90,6 @@ class GoalsTableViewController: UITableViewController {
                 case "editContainer":
                     if let indexPath = self.tableView.indexPathForSelectedRow {
                         desination.container = self.containerList[indexPath.row]
-//                            fetchedResultsController.object(at: indexPath)
                     }
                     break
                 case "addContainer":

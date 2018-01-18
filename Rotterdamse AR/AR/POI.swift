@@ -21,8 +21,6 @@ class POI: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FirebaseApp.configure()
-        
         refContainers = Database.database().reference().child("containers");
         
         //observing the data changes
@@ -44,9 +42,11 @@ class POI: UITableViewController {
                     let containerImage = containerObject?["image"]
                     let containerLat = containerObject?["lat"]
                     let containerLong = containerObject?["long"]
+                    let containerAltitude = containerObject?["altitude"]
+                    let containerCreated = containerObject?["created"]
                     
                     //creating artist object with model and fetched values
-                    let container = Container(id: containerId as! String?, name: containerName as! String?, desc: containerDesc as! String?, picture: containerImage as! UIImage?, lat: containerLat as! Double?, long: containerLong as! Double?)
+                    let container = Container(id: containerId as! Int?, name: containerName as! String?, desc: containerDesc as! String?, picture: containerImage as! String?, lat: containerLat as! Double?, long: containerLong as! Double?, altitude: containerAltitude as! Double?, created: containerCreated as! String?)
                     
                     //appending it to list
                     self.containerList.append(container)
