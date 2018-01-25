@@ -15,7 +15,7 @@ class ContainerTableViewCell: UITableViewCell {
     
     public var container:Container? {
         didSet {
-            self.name.text = container?.name
+            self.name.text = container?.containerName
             self.picture.image = container?.getPicture()
         }
     }

@@ -1,23 +1,37 @@
 //
-//  Calendar.swift
-//  CalSum
-//
-//  Created by Iain Munro on 25/11/2017.
-//  Copyright © 2017 Iain Munro. All rights reserved.
+//  Created by Timo Janssen on 17/11/2017.
+//  Copyright © 2017 Timo Janssen. All rights reserved.
 //
 
 import Foundation
-import CoreData
 import EventKit
 import UIKit
 
-public class Container: NSManagedObject {
-    func resetToDefaults() {
-        
+class Container {
+    
+    var id: String?
+    var containerName: String?
+    var desc: String?
+    var containerPicture: Data?
+    var containerLat: Double?
+    var containerLong: Double?
+    var containerAltitude: Double?
+    var containerCreated: Date?
+    
+    init(id: String?, name: String?, desc: String?, picture: String?, lat: Double?, long: Double?, altitude: Double?, created: String?){
+        self.id = id
+        self.containerName = name
+        self.desc = desc
+        if (picture != nil) {
+            self.containerPicture = Data(base64Encoded: picture!, options: .ignoreUnknownCharacters)
+        }
+        self.containerLat = lat
+        self.containerLong = long
+        self.containerAltitude = altitude
     }
     
     func getPicture() -> UIImage? {
-        if let picture = self.picture {
+        if let picture = self.containerPicture {
             return UIImage(data: picture)
         }
         return nil

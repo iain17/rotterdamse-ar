@@ -8,42 +8,56 @@
 
 import UIKit
 import EventKit
-import CoreData
+import Firebase
 
 class GoalsTableViewController: UITableViewController {
     let reuseIdentifier = "ContainerCell"
     
-    fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
+    var refContainers: DatabaseReference!
+
+    @IBOutlet weak var tableViewContainers: UITableView!
     
-    fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Container> = {
-        // Create Fetch Request
-        let fetchRequest: NSFetchRequest<Container> = Container.fetchRequest()
-        
-        // Configure Fetch Request
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: false)]
-        
-        // Create Fetched Results Controller
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.coreDataManager.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        
-        // Configure Fetched Results Controller
-        fetchedResultsController.delegate = self
-        
-        return fetchedResultsController
-    }()
+    var containerList = [Container]()
     
     override func viewDidLoad() {
-        refresh(1)
+//        refresh(1)
         self.refreshControl?.endRefreshing()
-    }
-    
-    @IBAction func refresh(_ sender: Any) {
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            let fetchError = error as NSError
-            print("Unable to fetch containers")
-            print("\(fetchError), \(fetchError.localizedDescription)")
-        }
+        
+        refContainers = Database.database().reference().child("containers");
+        
+        //observing the data changes
+        refContainers.observe(DataEventType.value, with: { (snapshot) in
+            
+            //if the reference have some values
+            if snapshot.childrenCount > 0 {
+                
+                //clearing the list
+                self.containerList.removeAll()
+                
+                //iterating through all the values
+                for containers in snapshot.children.allObjects as! [DataSnapshot] {
+                    //getting values
+                    let containerObject = containers.value as? [String: AnyObject]
+                    let containerName  = containerObject?["name"]
+                    let containerId  = containers.key
+                    let containerDesc = containerObject?["desc"]
+                    let containerImage = containerObject?["image"]
+                    let containerLat = containerObject?["lat"]
+                    let containerLong = containerObject?["long"]
+                    let containerAltitude = containerObject?["altitude"]
+                    let containerCreated = containerObject?["created"]
+                    
+                    //creating artist object with model and fetched values
+                    let container = Container(id: containerId as! String?, name: containerName as! String?, desc: containerDesc as! String?, picture: containerImage as! String?, lat: containerLat as! Double?, long: containerLong as! Double?, altitude: containerAltitude as! Double?, created: containerCreated as! String?)
+                    
+                    //appending it to list
+                    self.containerList.append(container)
+                }
+                
+                //reloading the tableview
+                self.tableViewContainers.reloadData()
+            }
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,19 +69,7 @@ class GoalsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sections = fetchedResultsController.sections else {
-            return 0
-        }
-        
-        let sectionInfo = sections[section]
-        return sectionInfo.numberOfObjects
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete else { return }
-        let object = fetchedResultsController.object(at: indexPath)
-        fetchedResultsController.managedObjectContext.delete(object)
-        try? fetchedResultsController.managedObjectContext.save()
+        return containerList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,12 +77,11 @@ class GoalsTableViewController: UITableViewController {
             fatalError("Unexpected Index Path")
         }
         
-        let container = fetchedResultsController.object(at: indexPath)
+        let container = self.containerList[indexPath.row]
         cell.container = container
         
         return cell
     }
-    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let desination = segue.destination as? ContainerViewController {
@@ -88,12 +89,13 @@ class GoalsTableViewController: UITableViewController {
                 switch(identifier) {
                 case "editContainer":
                     if let indexPath = self.tableView.indexPathForSelectedRow {
-                        desination.container = fetchedResultsController.object(at: indexPath)
+                        desination.container = self.containerList[indexPath.row]
                     }
                     break
                 case "addContainer":
-                    desination.container = Container(context: self.coreDataManager.managedObjectContext)
-                    desination.container.resetToDefaults()
+                    
+                    desination.container = Container(id: nil, name: nil, desc: nil, picture: nil, lat: 0.0, long: 0.0, altitude: 0.0, created: nil)
+//                    desination.container.resetToDefaults()
                     break
                 default:
                     print("dunno what to do with \(identifier)")

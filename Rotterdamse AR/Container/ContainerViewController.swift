@@ -10,15 +10,18 @@ import UIKit
 import Eureka
 import ImageRow
 import CoreLocation
+import Firebase
 
 class ContainerViewController: FormViewController {
-    fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
+//    fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
     public var container: Container!
     let sceneLocationView = (UIApplication.shared.delegate as! AppDelegate).sceneLocationView
+    var refContainers: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = container.name
+        refContainers = Database.database().reference().child("containers");
+        self.title = container.containerName
         if self.title == nil {
             self.title = "Register container"
         }
@@ -27,23 +30,23 @@ class ContainerViewController: FormViewController {
             <<< TextRow(){ row in
                 row.title = "* Name"
                 row.placeholder = "Enter container name"
-                row.value = self.container.name
+                row.value = self.container.containerName
             }.onChange({ (row) in
-                self.container.name = row.value
+                self.container.containerName = row.value
             })
             <<< TextAreaRow() {
                 $0.title = "Notes"
                 $0.placeholder = "Anything special about this container?"
                 $0.textAreaHeight = .dynamic(initialTextViewHeight: 110)
-                $0.value = self.container.notes
+                $0.value = self.container.desc
             }.onChange({ (row) in
-                self.container.notes = row.value
+                self.container.desc = row.value
             })
             <<< ImageRow() {
                 $0.title = "* Picture"
                 $0.sourceTypes = .All
                 $0.clearAction = .no
-                if let picture = self.container.picture {
+                if let picture = self.container.containerPicture {
                     $0.value = UIImage(data: picture)
                 }
             }.cellUpdate { cell, row in
@@ -52,7 +55,7 @@ class ContainerViewController: FormViewController {
             }.onChange({ (row) in
                 if let value = row.value {
                     if let data = UIImagePNGRepresentation(value) as Data? {
-                        self.container.picture = data as Data
+                        self.container.containerPicture = data as Data
                     }
                 }
             })
@@ -69,9 +72,9 @@ class ContainerViewController: FormViewController {
                 self.showError(title: "Can't get your location", message: "\(location.horizontalAccuracy) meters is not accurate enough")
                 return
             }
-            self.container.lat = location.coordinate.latitude
-            self.container.lng = location.coordinate.longitude
-            self.container.altitude = Double(location.altitude)
+            self.container.containerLat = location.coordinate.latitude
+            self.container.containerLong = location.coordinate.longitude
+            self.container.containerAltitude = Double(location.altitude)
             self.showError(title: "Location set", message: "Container location registered with \(location.horizontalAccuracy) meters of accuracy")
         }
     }
@@ -88,30 +91,61 @@ class ContainerViewController: FormViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        if self.container.created == nil {
-            self.container.created = Date()
+        if self.container.containerCreated == nil {
+            self.container.containerCreated = Date()
         }
         
-        if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
+        if self.container.containerLat == 0.0 || self.container.containerLong  == 0.0 || self.container.containerAltitude  == 0.0 {
             self.updatePosition()
         }
         
-        if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
-            return
-        }
+//        if self.container.containerLat == 0.0 || self.container.containerLong  == 0.0 || self.container.containerAltitude  == 0.0 {
+//            return
+//        }
         
-        if self.container.picture == nil {
+        if self.container.containerPicture == nil {
             self.showError(title: "No picture", message: "Please select or make a picture of the container")
             return
         }
         
-        if self.container.name == nil {
+        if self.container.containerName == nil {
             self.showError(title: "No name", message: "Please enter a name of the container")
             return
         }
         
+        if self.container.desc == nil {
+            self.showError(title: "No description", message: "Please set a description for this container")
+            return
+        }
+        
         do {
-            try coreDataManager.managedObjectContext.save()
+//            try coreDataManager.managedObjectContext.save()
+            print("HEREREAREA1")
+            print(self.container.id)
+            if self.container.id == nil {
+                let newBookRef = self.refContainers!
+                    .childByAutoId()
+                
+                let newContainerId = newBookRef.key
+                self.container.id = newContainerId
+                
+                let dateFormatter = DateFormatter()
+                
+                print("HERERERER")
+                print(self.container.containerLat)
+                
+                let newContainerData = [
+                    "created": dateFormatter.string(from: self.container.containerCreated!) as! NSString,
+                    "desc": self.container.desc as! NSString,
+                    "image": self.container.containerPicture!.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0)) as NSString,
+                    "lat": self.container.containerLat! as! NSNumber,
+                    "long": self.container.containerLong! as! NSNumber,
+                    "name": self.container.containerName as! NSString,
+                    "altitude": self.container.containerAltitude! as! NSNumber
+                ]
+                
+                newBookRef.setValue(newContainerData)
+            }
             self.navigationController?.popViewController(animated: true)
         } catch let error {
             print(error)

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rotterdamse AR/Containers/ContainersTableViewController.swift"
+            timestampString = "538525234.8757401"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "GoalsTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rotterdamse_AR.GoalsTableViewController.__deallocating_deinit"
+                  moduleName = "Rotterdamse AR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Timo/Documents/school/minior/rotterdamse-ar/Rotterdamse%20AR/Containers/ContainersTableViewController.swift"
+                  timestampString = "537963324.930258"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rotterdamse_AR.GoalsTableViewController.__allocating_init(style: __C.UITableViewStyle) -&gt; Rotterdamse_AR.GoalsTableViewController"
+                  moduleName = "Rotterdamse AR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Timo/Documents/school/minior/rotterdamse-ar/Rotterdamse%20AR/Containers/ContainersTableViewController.swift"
+                  timestampString = "537963324.939695"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rotterdamse_AR.GoalsTableViewController.init(style: __C.UITableViewStyle) -&gt; Rotterdamse_AR.GoalsTableViewController"
+                  moduleName = "Rotterdamse AR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Timo/Documents/school/minior/rotterdamse-ar/Rotterdamse%20AR/Containers/ContainersTableViewController.swift"
+                  timestampString = "537963324.967432"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rotterdamse_AR.GoalsTableViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Rotterdamse_AR.GoalsTableViewController"
+                  moduleName = "Rotterdamse AR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Timo/Documents/school/minior/rotterdamse-ar/Rotterdamse%20AR/Containers/ContainersTableViewController.swift"
+                  timestampString = "537963324.9731359"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rotterdamse_AR.GoalsTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Rotterdamse_AR.GoalsTableViewController"
+                  moduleName = "Rotterdamse AR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Timo/Documents/school/minior/rotterdamse-ar/Rotterdamse%20AR/Containers/ContainersTableViewController.swift"
+                  timestampString = "537963324.981945"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rotterdamse_AR.GoalsTableViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Rotterdamse_AR.GoalsTableViewController&gt;"
+                  moduleName = "Rotterdamse AR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Timo/Documents/school/minior/rotterdamse-ar/Rotterdamse%20AR/Containers/ContainersTableViewController.swift"
+                  timestampString = "537963324.99323"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rotterdamse_AR.GoalsTableViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Rotterdamse_AR.GoalsTableViewController&gt;"
+                  moduleName = "Rotterdamse AR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Timo/Documents/school/minior/rotterdamse-ar/Rotterdamse%20AR/Containers/ContainersTableViewController.swift"
+                  timestampString = "537963324.999422"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rotterdamse AR/Models/Container.swift"
+            timestampString = "538525234.875815"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rotterdamse AR/Models/Container.swift"
+            timestampString = "538525234.8761621"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rotterdamse AR/Containers/ContainerTableViewCell.swift"
+            timestampString = "538521212.18643"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "container"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
