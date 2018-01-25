@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rotterdamse AR/Containers/ContainersTableViewController.swift"
-            timestampString = "537963429.638974"
+            timestampString = "538525234.8757401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -133,13 +133,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rotterdamse AR/Models/Container.swift"
-            timestampString = "537963429.639062"
+            timestampString = "538525234.875815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "getPicture()"
-            landmarkType = "7">
+            startingLineNumber = "40"
+            endingLineNumber = "40">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -149,13 +147,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rotterdamse AR/Models/Container.swift"
-            timestampString = "537963429.639115"
+            timestampString = "538525234.8761621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "getPicture()"
-            landmarkType = "7">
+            startingLineNumber = "40"
+            endingLineNumber = "40">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -165,7 +161,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rotterdamse AR/Containers/ContainerTableViewCell.swift"
-            timestampString = "537963429.639775"
+            timestampString = "538521212.18643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"

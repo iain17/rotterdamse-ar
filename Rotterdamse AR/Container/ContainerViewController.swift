@@ -10,14 +10,17 @@ import UIKit
 import Eureka
 import ImageRow
 import CoreLocation
+import Firebase
 
 class ContainerViewController: FormViewController {
 //    fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
     public var container: Container!
     let sceneLocationView = (UIApplication.shared.delegate as! AppDelegate).sceneLocationView
+    var refContainers: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refContainers = Database.database().reference().child("containers");
         self.title = container.containerName
         if self.title == nil {
             self.title = "Register container"
@@ -96,9 +99,9 @@ class ContainerViewController: FormViewController {
             self.updatePosition()
         }
         
-        if self.container.containerLat == 0.0 || self.container.containerLong  == 0.0 || self.container.containerAltitude  == 0.0 {
-            return
-        }
+//        if self.container.containerLat == 0.0 || self.container.containerLong  == 0.0 || self.container.containerAltitude  == 0.0 {
+//            return
+//        }
         
         if self.container.containerPicture == nil {
             self.showError(title: "No picture", message: "Please select or make a picture of the container")
@@ -110,8 +113,39 @@ class ContainerViewController: FormViewController {
             return
         }
         
+        if self.container.desc == nil {
+            self.showError(title: "No description", message: "Please set a description for this container")
+            return
+        }
+        
         do {
 //            try coreDataManager.managedObjectContext.save()
+            print("HEREREAREA1")
+            print(self.container.id)
+            if self.container.id == nil {
+                let newBookRef = self.refContainers!
+                    .childByAutoId()
+                
+                let newContainerId = newBookRef.key
+                self.container.id = newContainerId
+                
+                let dateFormatter = DateFormatter()
+                
+                print("HERERERER")
+                print(self.container.containerLat)
+                
+                let newContainerData = [
+                    "created": dateFormatter.string(from: self.container.containerCreated!) as! NSString,
+                    "desc": self.container.desc as! NSString,
+                    "image": self.container.containerPicture!.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0)) as NSString,
+                    "lat": self.container.containerLat! as! NSNumber,
+                    "long": self.container.containerLong! as! NSNumber,
+                    "name": self.container.containerName as! NSString,
+                    "altitude": self.container.containerAltitude! as! NSNumber
+                ]
+                
+                newBookRef.setValue(newContainerData)
+            }
             self.navigationController?.popViewController(animated: true)
         } catch let error {
             print(error)

@@ -37,7 +37,7 @@ class POI: UITableViewController {
                     //getting values
                     let containerObject = containers.value as? [String: AnyObject]
                     let containerName  = containerObject?["name"]
-                    let containerId  = containerObject?["id"]
+                    let containerId  = containers.key
                     let containerDesc = containerObject?["desc"]
                     let containerImage = containerObject?["image"]
                     let containerLat = containerObject?["lat"]
@@ -46,7 +46,7 @@ class POI: UITableViewController {
                     let containerCreated = containerObject?["created"]
                     
                     //creating artist object with model and fetched values
-                    let container = Container(id: containerId as! Int?, name: containerName as! String?, desc: containerDesc as! String?, picture: containerImage as! String?, lat: containerLat as! Double?, long: containerLong as! Double?, altitude: containerAltitude as! Double?, created: containerCreated as! String?)
+                    let container = Container(id: containerId as String?, name: containerName as! String?, desc: containerDesc as! String?, picture: containerImage as! String?, lat: containerLat as! Double?, long: containerLong as! Double?, altitude: containerAltitude as! Double?, created: containerCreated as! String?)
                     
                     //appending it to list
                     self.containerList.append(container)

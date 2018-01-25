@@ -9,7 +9,7 @@ import UIKit
 
 class Container {
     
-    var id: Int?
+    var id: String?
     var containerName: String?
     var desc: String?
     var containerPicture: Data?
@@ -18,11 +18,13 @@ class Container {
     var containerAltitude: Double?
     var containerCreated: Date?
     
-    init(id: Int?, name: String?, desc: String?, picture: String?, lat: Double?, long: Double?, altitude: Double?, created: String?){
+    init(id: String?, name: String?, desc: String?, picture: String?, lat: Double?, long: Double?, altitude: Double?, created: String?){
         self.id = id
         self.containerName = name
         self.desc = desc
-        self.containerPicture = Data(base64Encoded: picture!, options: .ignoreUnknownCharacters)
+        if (picture != nil) {
+            self.containerPicture = Data(base64Encoded: picture!, options: .ignoreUnknownCharacters)
+        }
         self.containerLat = lat
         self.containerLong = long
         self.containerAltitude = altitude

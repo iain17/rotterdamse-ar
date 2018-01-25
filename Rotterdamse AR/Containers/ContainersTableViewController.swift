@@ -20,7 +20,7 @@ class GoalsTableViewController: UITableViewController {
     var containerList = [Container]()
     
     override func viewDidLoad() {
-        refresh(1)
+//        refresh(1)
         self.refreshControl?.endRefreshing()
         
         refContainers = Database.database().reference().child("containers");
@@ -39,7 +39,7 @@ class GoalsTableViewController: UITableViewController {
                     //getting values
                     let containerObject = containers.value as? [String: AnyObject]
                     let containerName  = containerObject?["name"]
-                    let containerId  = containerObject?["id"]
+                    let containerId  = containers.key
                     let containerDesc = containerObject?["desc"]
                     let containerImage = containerObject?["image"]
                     let containerLat = containerObject?["lat"]
@@ -48,7 +48,7 @@ class GoalsTableViewController: UITableViewController {
                     let containerCreated = containerObject?["created"]
                     
                     //creating artist object with model and fetched values
-                    let container = Container(id: containerId as! Int?, name: containerName as! String?, desc: containerDesc as! String?, picture: containerImage as! String?, lat: containerLat as! Double?, long: containerLong as! Double?, altitude: containerAltitude as! Double?, created: containerCreated as! String?)
+                    let container = Container(id: containerId as! String?, name: containerName as! String?, desc: containerDesc as! String?, picture: containerImage as! String?, lat: containerLat as! Double?, long: containerLong as! Double?, altitude: containerAltitude as! Double?, created: containerCreated as! String?)
                     
                     //appending it to list
                     self.containerList.append(container)
@@ -93,7 +93,8 @@ class GoalsTableViewController: UITableViewController {
                     }
                     break
                 case "addContainer":
-//                    desination.container = Container(context: self.coreDataManager.managedObjectContext)
+                    
+                    desination.container = Container(id: nil, name: nil, desc: nil, picture: nil, lat: 0.0, long: 0.0, altitude: 0.0, created: nil)
 //                    desination.container.resetToDefaults()
                     break
                 default:
