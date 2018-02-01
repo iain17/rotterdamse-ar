@@ -21,7 +21,6 @@
 		71368CBB1F90C71C00738CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71368CB91F90C71C00738CE8 /* LaunchScreen.storyboard */; };
 		71368CC61F90C71D00738CE8 /* AR_InfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CC51F90C71D00738CE8 /* AR_InfoTests.swift */; };
 		71368CD11F90C71D00738CE8 /* AR_InfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CD01F90C71D00738CE8 /* AR_InfoUITests.swift */; };
-		71368CDF1F90C99000738CE8 /* AnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71368CDE1F90C99000738CE8 /* AnnotationNode.swift */; };
 		7172E21D1FD9887C0079DB5F /* ContainersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172E21C1FD9887C0079DB5F /* ContainersTableViewController.swift */; };
 		718D77EA1F90F3E40087BF69 /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718D77E91F90F3E40087BF69 /* POI.swift */; };
 /* End PBXBuildFile section */
@@ -68,7 +67,6 @@
 		71368CCC1F90C71D00738CE8 /* Rotterdamse ARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rotterdamse ARUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71368CD01F90C71D00738CE8 /* AR_InfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_InfoUITests.swift; sourceTree = "<group>"; };
 		71368CD21F90C71D00738CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71368CDE1F90C99000738CE8 /* AnnotationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationNode.swift; sourceTree = "<group>"; };
 		7172E21C1FD9887C0079DB5F /* ContainersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersTableViewController.swift; sourceTree = "<group>"; };
 		718D77E91F90F3E40087BF69 /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
 		78EC506FC563AE7CC280EAC3 /* Pods-AR-Info.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Info.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Info/Pods-AR-Info.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 		275EBB341FD991F3000F41B2 /* AR */ = {
 			isa = PBXGroup;
 			children = (
-				71368CDE1F90C99000738CE8 /* AnnotationNode.swift */,
 				718D77E91F90F3E40087BF69 /* POI.swift */,
 				71368CB21F90C71C00738CE8 /* ARViewController.swift */,
 			);
@@ -441,7 +438,6 @@
 				718D77EA1F90F3E40087BF69 /* POI.swift in Sources */,
 				275EBB3C1FD99497000F41B2 /* ar.xcdatamodeld in Sources */,
 				71368CB31F90C71C00738CE8 /* ARViewController.swift in Sources */,
-				71368CDF1F90C99000738CE8 /* AnnotationNode.swift in Sources */,
 				275EBB371FD9938D000F41B2 /* UITableViewController.swift in Sources */,
 				275EBB3F1FD99536000F41B2 /* CoreDataManager.swift in Sources */,
 				275EBB421FD9965E000F41B2 /* Container.swift in Sources */,

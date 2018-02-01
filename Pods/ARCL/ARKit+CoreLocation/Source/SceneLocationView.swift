@@ -42,7 +42,10 @@ public enum LocationEstimateMethod {
 public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     ///The limit to the scene, in terms of what data is considered reasonably accurate.
     ///Measured in meters.
-    private static let sceneLimit = 100.0
+    ///This was 100 meters try to make it more accurate lowered to 32
+    ///Should be higher number if it will not work indoors
+    ///Indoors is problem because of bad GPS signal
+    private static let sceneLimit = 32.0
     
     public weak var locationDelegate: SceneLocationViewDelegate?
     
@@ -76,7 +79,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     
     ///Whether debugging feature points should be displayed.
     ///Defaults to false
-    var showFeaturePoints = false
+    public var showFeaturePoints = false
     
     ///Only to be overrided if you plan on manually setting True North.
     ///When true, sets up the scene to face what the device considers to be True North.
@@ -108,7 +111,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         delegate = self
 
         // Show statistics such as fps and timing information
-        showsStatistics = false
+        showsStatistics = true
 
         if showFeaturePoints {
             debugOptions = [ARSCNDebugOptions.showFeaturePoints]

@@ -14,7 +14,8 @@ import CoreLocation
 class ContainerViewController: FormViewController {
     fileprivate let coreDataManager = (UIApplication.shared.delegate as! AppDelegate).coreDataManager
     public var container: Container!
-    let sceneLocationView = (UIApplication.shared.delegate as! AppDelegate).sceneLocationView
+    //    let sceneLocationView = (UIApplication.shared.delegate as! AppDelegate).sceneLocationView
+    var locManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +29,17 @@ class ContainerViewController: FormViewController {
                 row.title = "* Name"
                 row.placeholder = "Enter container name"
                 row.value = self.container.name
-            }.onChange({ (row) in
-                self.container.name = row.value
-            })
+                }.onChange({ (row) in
+                    self.container.name = row.value
+                })
             <<< TextAreaRow() {
                 $0.title = "Notes"
                 $0.placeholder = "Anything special about this container?"
                 $0.textAreaHeight = .dynamic(initialTextViewHeight: 110)
                 $0.value = self.container.notes
-            }.onChange({ (row) in
-                self.container.notes = row.value
-            })
+                }.onChange({ (row) in
+                    self.container.notes = row.value
+                })
             <<< ImageRow() {
                 $0.title = "* Picture"
                 $0.sourceTypes = .All
@@ -46,33 +47,55 @@ class ContainerViewController: FormViewController {
                 if let picture = self.container.picture {
                     $0.value = UIImage(data: picture)
                 }
-            }.cellUpdate { cell, row in
-                cell.accessoryView?.layer.cornerRadius = 17
-                cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
-            }.onChange({ (row) in
-                if let value = row.value {
-                    if let data = UIImagePNGRepresentation(value) as Data? {
-                        self.container.picture = data as Data
+                }.cellUpdate { cell, row in
+                    cell.accessoryView?.layer.cornerRadius = 17
+                    cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+                }.onChange({ (row) in
+                    if let value = row.value {
+                        if let data = UIImagePNGRepresentation(value) as Data? {
+                            self.container.picture = data as Data
+                        }
                     }
+                })
+            <<< TextRow(){ row in
+                row.title = "Latitude"
+                row.placeholder = "Enter container name"
+                row.value = String(self.container.lat)
+                row.disabled = true
                 }
-            })
+            <<< TextRow(){ row in
+                row.title = "Longtitude"
+                row.placeholder = "Enter container name"
+                row.value = String(self.container.lng)
+                row.disabled = true
+                }
+            <<< TextRow(){ row in
+                row.title = "Altitude"
+                row.placeholder = "Enter container name"
+                row.value = String(self.container.altitude)
+                row.disabled = true
+                }
             <<< ButtonRow() {
                 $0.title = "Set to current location"
                 }.onCellSelection {_,_ in
-                self.updatePosition()
-            }
+                    self.updatePosition()
+        }
     }
-
+    
     func updatePosition() {
-        if let location = self.sceneLocationView.currentLocation() {
-            if location.horizontalAccuracy >= 32 {
-                self.showError(title: "Can't get your location", message: "\(location.horizontalAccuracy) meters is not accurate enough")
+        var currentLocation: CLLocation?
+        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
+            currentLocation = locManager.location
+        }
+        if let location = currentLocation {
+            if location.horizontalAccuracy >= 32 || location.verticalAccuracy >= 5 {
+                self.showError(title: "Can't get your location", message: "Horizontal \(location.horizontalAccuracy) meters and or the is \(location.verticalAccuracy) not accurate enough")
                 return
             }
             self.container.lat = location.coordinate.latitude
             self.container.lng = location.coordinate.longitude
             self.container.altitude = Double(location.altitude)
-            self.showError(title: "Location set", message: "Container location registered with \(location.horizontalAccuracy) meters of accuracy")
+            self.showError(title: "Location set", message: "Container location registered with horizontal \(location.horizontalAccuracy) meters of accuracy and vertical \(location.verticalAccuracy) meters of accuracy")
         }
     }
     
@@ -92,11 +115,12 @@ class ContainerViewController: FormViewController {
             self.container.created = Date()
         }
         
-        if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
-            self.updatePosition()
-        }
+//        if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
+//            self.updatePosition()
+//        }
         
         if self.container.lat == 0.0 || self.container.lng  == 0.0 || self.container.altitude  == 0.0 {
+            self.showError(title: "There is no location", message: "Please give the container a position")
             return
         }
         

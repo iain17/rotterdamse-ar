@@ -36,7 +36,12 @@ class POI: UITableViewController {
     func makePointsOfinterest(sceneLocationView: SceneLocationView, viewController: ARViewController) {
         sceneLocationView.removeAll()
         
-        var tempLocation: CLLocation? = nil
+        var currentLocation: CLLocation? = nil
+        var distance: Double
+        if sceneLocationView.currentLocation() != nil {
+            currentLocation = sceneLocationView.currentLocation()
+        }
+        
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -49,28 +54,33 @@ class POI: UITableViewController {
         for group in sections! {
             let pinCoordinate = CLLocationCoordinate2D(latitude: Double(group.lat), longitude: Double(group.lng))
             let pinLocation = CLLocation(coordinate: pinCoordinate, altitude: Double(group.altitude))
-            if tempLocation != nil {
-                print(pinLocation.distance(from: tempLocation!))
-            }
-            tempLocation = pinLocation
-            let pinImage = group.getPicture()
-            if pinImage == nil {
-                continue
-            }
-            var description = ""
-            if let name = group.name {
-                description += name
-            }
-            if let notes = group.notes {
-                description += "\n"
-                description += notes
-            }
-            //Render overlay image
-            if let image = overlayTextOverImage(image: pinImage!, text: description, viewController: viewController) {
-                let pinLocationNode = LocationAnnotationNode(location: pinLocation, image: image)
-                pinLocationNode.scaleRelativeToDistance = true
-                pinLocationNode.castsShadow = true
-                sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: pinLocationNode)
+            if currentLocation != nil {
+                distance = pinLocation.distance(from: currentLocation!)
+                if distance >= 150.0 {
+                    if let name = group.name {
+                        print("\(name) too far away. More then \(round(distance/1000)) km.")
+                    }
+                } else {
+                    let pinImage = group.getPicture()
+                    if pinImage == nil {
+                        continue
+                    }
+                    var description = ""
+                    if let name = group.name {
+                        description += name
+                    }
+                    if let notes = group.notes {
+                        description += "\n"
+                        description += notes
+                    }
+                    //Render overlay image
+                    if let image = overlayTextOverImage(image: pinImage!, text: description, viewController: viewController) {
+                        let pinLocationNode = LocationAnnotationNode(location: pinLocation, image: image)
+                        pinLocationNode.scaleRelativeToDistance = true
+                        pinLocationNode.castsShadow = true
+                        sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: pinLocationNode)
+                    }
+                }
             }
         }
     }
@@ -91,7 +101,8 @@ class POI: UITableViewController {
         let imgView = UIImageView(frame: viewToRender.frame)
         imgView.image = image
         
-        imgView.transform = imgView.transform.rotated(by: CGFloat(M_PI_2))
+        // because the turn happens because of what happens in the tableview
+        //imgView.transform = imgView.transform.rotated(by: CGFloat(M_PI_2))
         
         viewToRender.addSubview(imgView)
         let textImgView = UIImageView(frame: viewToRender.frame)

@@ -35,9 +35,9 @@ extension UITableViewController: NSFetchedResultsControllerDelegate {
             }
             break;
         case .update:
-            if let indexPath = indexPath, let cell = self.tableView.cellForRow(at: indexPath) {
+//            if let indexPath = indexPath, let cell = self.tableView.cellForRow(at: indexPath) {
                 //                configureCell(cell, at: indexPath)
-            }
+//            }
             break;
         case .move:
             if let indexPath = indexPath {
